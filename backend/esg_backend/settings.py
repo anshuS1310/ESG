@@ -4,7 +4,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-your-core-safe-key-here'
 DEBUG = False
-ALLOWED_HOSTS = ['*', 'gleaming-grace-production-3675.up.railway.app']
+ALLOWED_HOSTS = ['.railway.app', '127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
