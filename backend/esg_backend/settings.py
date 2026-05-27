@@ -3,8 +3,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-your-core-safe-key-here'
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ['*', 'gleaming-grace-production-3675.up.railway.app']
 
 # Application definition
 INSTALLED_APPS = [
@@ -87,8 +87,10 @@ REST_FRAMEWORK = {
     ],
 }
 
-# CORS configuration for local React dev server
+# CORS configuration — allows local dev and Railway production frontend
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://gleaming-grace-production-3675.up.railway.app",
 ]
+CORS_ALLOW_ALL_ORIGINS = True
