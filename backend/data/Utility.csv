@@ -1,0 +1,57 @@
+meter_id,provider,billing_start,billing_end,kwh_amount,cost_inr,currency,region,site_name,building_type
+MTR001,PowerGrid,2025-01-12,2025-02-11,1450,13050,INR,North,Delhi HQ,Office
+MTR001,PowerGrid,2025-02-12,2025-03-11,1520,13680,INR,North,Delhi HQ,Office
+MTR001,PowerGrid,2025-03-12,2025-04-11,1490,13410,INR,North,Delhi HQ,Office
+MTR001,PowerGrid,2025-04-12,2025-05-11,1610,14490,INR,North,Delhi HQ,Office
+MTR002,EnergyCo,2025-01-05,2025-02-04,2280,19380,INR,West,Mumbai Plant,Manufacturing
+MTR002,EnergyCo,2025-02-05,2025-03-04,2410,20485,INR,West,Mumbai Plant,Manufacturing
+MTR002,EnergyCo,2025-03-05,2025-04-04,2350,19975,INR,West,Mumbai Plant,Manufacturing
+MTR002,EnergyCo,2025-04-05,2025-05-04,2525,21462,INR,West,Mumbai Plant,Manufacturing
+MTR003,UtilityOne,2025-01-15,2025-02-14,1750,14875,INR,South,Bangalore DC,Warehouse
+MTR003,UtilityOne,2025-02-15,2025-03-14,1690,14365,INR,South,Bangalore DC,Warehouse
+MTR003,UtilityOne,2025-03-15,2025-04-14,1825,15512,INR,South,Bangalore DC,Warehouse
+MTR003,UtilityOne,2025-04-15,2025-05-14,1900,16150,INR,South,Bangalore DC,Warehouse
+MTR004,StateElectric,2025-01-10,2025-02-09,890,7565,INR,East,Kolkata Office,Office
+MTR004,StateElectric,2025-02-10,2025-03-09,940,7990,INR,East,Kolkata Office,Office
+MTR004,StateElectric,2025-03-10,2025-04-09,910,7735,INR,East,Kolkata Office,Office
+MTR004,StateElectric,2025-04-10,2025-05-09,980,8330,INR,East,Kolkata Office,Office
+MTR005,PowerGrid,2025-01-18,2025-02-17,3200,28800,INR,North,Lucknow Factory,Manufacturing
+MTR005,PowerGrid,2025-02-18,2025-03-17,3375,30375,INR,North,Lucknow Factory,Manufacturing
+MTR005,PowerGrid,2025-03-18,2025-04-17,,31500,INR,North,Lucknow Factory,Manufacturing
+MTR005,PowerGrid,2025-04-18,2025-05-17,3490,31410,INR,North,Lucknow Factory,Manufacturing
+MTR006,EnergyCo,2025-01-08,2025-02-07,1180,10030,INR,West,Pune Office,Office
+MTR006,EnergyCo,2025-02-08,2025-03-07,1225,10412,INR,West,Pune Office,Office
+MTR006,EnergyCo,2025-03-08,2025-04-07,1260,10710,INR,West,Pune Office,Office
+MTR006,EnergyCo,2025-04-08,2025-05-07,1315,11177,INR,West,Pune Office,Office
+MTR007,UtilityOne,2025-01-12,2025-02-11,2750,23375,INR,South,Chennai Warehouse,Warehouse
+MTR007,UtilityOne,2025-02-12,2025-03-11,2820,23970,INR,South,Chennai Warehouse,Warehouse
+MTR007,UtilityOne,2025-03-12,2025-04-11,2895,24607,INR,South,Chennai Warehouse,Warehouse
+MTR007,UtilityOne,2025-04-12,2025-05-11,3010,25585,INR,South,Chennai Warehouse,Warehouse
+MTR008,StateElectric,2025-01-03,2025-02-02,760,6460,INR,East,Bhubaneswar Office,Office
+MTR008,StateElectric,2025-02-03,2025-03-02,805,6842,INR,East,Bhubaneswar Office,Office
+MTR008,StateElectric,2025-03-03,2025-04-02,790,6715,INR,East,Bhubaneswar Office,Office
+MTR008,StateElectric,2025-04-03,2025-05-02,845,7182,INR,East,Bhubaneswar Office,Office
+MTR009,PowerGrid,2025-01-20,2025-02-19,4120,37080,INR,North,Noida Data Center,Data Center
+MTR009,PowerGrid,2025-02-20,2025-03-19,4285,38565,INR,North,Noida Data Center,Data Center
+MTR009,PowerGrid,2025-03-20,2025-04-19,4350,39150,INR,North,Noida Data Center,Data Center
+MTR009,PowerGrid,2025-04-20,2025-05-19,4510,40590,INR,North,Noida Data Center,Data Center
+MTR010,EnergyCo,2025-01-07,2025-02-06,1860,15810,INR,West,Ahmedabad Hospital,Hospital
+MTR010,EnergyCo,2025-02-07,2025-03-06,1925,16362,INR,West,Ahmedabad Hospital,Hospital
+MTR010,EnergyCo,2025-03-07,2025-04-06,1980,16830,INR,West,Ahmedabad Hospital,Hospital
+MTR010,EnergyCo,2025-04-07,2025-05-06,2055,17467,INR,West,Ahmedabad Hospital,Hospital
+MTR011,UtilityOne,2025-01-14,2025-02-13,3550,30175,INR,South,Hyderabad Plant,Manufacturing
+MTR011,UtilityOne,2025-02-14,2025-03-13,3680,31280,INR,South,Hyderabad Plant,Manufacturing
+MTR011,UtilityOne,2025-03-14,2025-04-13,3745,31832,INR,South,Hyderabad Plant,Manufacturing
+MTR011,UtilityOne,2025-04-14,2025-05-13,3890,33065,INR,South,Hyderabad Plant,Manufacturing
+MTR012,StateElectric,2025-01-09,2025-02-08,950,8075,INR,East,Patna Office,Office
+MTR012,StateElectric,2025-02-09,2025-03-08,990,8415,INR,East,Patna Office,Office
+MTR012,StateElectric,2025-03-09,2025-04-08,1025,8712,INR,East,Patna Office,Office
+MTR012,StateElectric,2025-04-09,2025-05-08,1080,9180,INR,East,Patna Office,Office
+MTR013,PowerGrid,2025-01-16,2025-02-15,2480,22320,INR,North,Jaipur Warehouse,Warehouse
+MTR013,PowerGrid,2025-02-16,2025-03-15,2550,22950,INR,North,Jaipur Warehouse,Warehouse
+MTR013,PowerGrid,2025-03-16,2025-04-15,2635,23715,INR,North,Jaipur Warehouse,Warehouse
+MTR013,PowerGrid,2025-04-16,2025-05-15,2710,24390,INR,North,Jaipur Warehouse,Warehouse
+MTR014,EnergyCo,2025-01-11,2025-02-10,5200,46800,INR,West,Nagpur Steel Plant,Manufacturing
+MTR014,EnergyCo,2025-02-11,2025-03-10,5380,48420,INR,West,Nagpur Steel Plant,Manufacturing
+MTR014,EnergyCo,2025-03-11,2025-04-10,5495,49455,INR,West,Nagpur Steel Plant,Manufacturing
+MTR014,EnergyCo,2025-04-11,2025-05-10,5630,50670,INR,West,Nagpur Steel Plant,Manufacturing

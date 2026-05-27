@@ -1,0 +1,21 @@
+trip_id,employee_id,traveler_name,segment_type,travel_date,origin,destination,miles,ticket_cost_inr,currency,department,booking_source
+TR001,E1001,Rahul Sharma,Flight,2025-01-05,DEL,LHR,,52000,INR,Sales,Concur
+TR002,E1002,Priya Verma,Flight,2025-01-12,BOM,SIN,2420,28500,INR,Operations,Concur
+TR003,E1003,Amit Gupta,Rail,2025-01-18,Delhi,Agra,120,1500,INR,HR,Concur
+TR004,E1004,Neha Singh,Hotel,2025-01-20,,,0,8500,INR,Finance,Concur
+TR005,E1005,Arjun Patel,Flight,2025-02-02,BLR,DXB,,22500,INR,Operations,Concur
+TR006,E1001,Rahul Sharma,Flight,2025-02-08,LHR,JFK,3451,76000,INR,Sales,Concur
+TR007,E1006,Sneha Roy,Rail,2025-02-15,Mumbai,Pune,95,900,INR,Marketing,Concur
+TR008,E1002,Priya Verma,Hotel,2025-02-20,,,0,12000,INR,Operations,Concur
+TR009,E1007,Karan Mehta,Flight,2025-03-01,SIN,HKG,,18500,INR,Engineering,Concur
+TR010,E1008,Ananya Das,Flight,2025-03-05,DEL,BOM,710,6200,INR,Finance,Concur
+TR011,E1003,Amit Gupta,Flight,2025-03-10,DEL,CCU,,8300,INR,HR,Concur
+TR012,E1004,Neha Singh,Flight,2025-03-14,BLR,MAA,180,4500,INR,Finance,Concur
+TR013,E1005,Arjun Patel,Flight,2025-03-18,DXB,LHR,,47000,INR,Operations,Concur
+TR014,E1006,Sneha Roy,Rail,2025-03-22,Bangalore,Mysore,90,750,INR,Marketing,Concur
+TR015,E1007,Karan Mehta,Hotel,2025-03-25,,,0,9600,INR,Engineering,Concur
+TR016,E1008,Ananya Das,Flight,2025-04-02,DEL,SYD,,85000,INR,Finance,Concur
+TR017,E1001,Rahul Sharma,Flight,2025-04-10,JFK,LAX,2475,38000,INR,Sales,Concur
+TR018,E1002,Priya Verma,Flight,2025-04-15,LAX,SFO,337,6400,INR,Operations,Concur
+TR019,E1003,Amit Gupta,Rail,2025-04-22,Chennai,Coimbatore,310,1800,INR,HR,Concur
+TR020,E1005,Arjun Patel,Flight,2025-05-01,BOM,DEL,710,6100,INR,Operations,Concur
