@@ -1,11 +1,4 @@
 {
-  "$schema": "https://railway.com/railway.schema.json",
-  "build": {
-    "builder": "RAILPACK",
-    "watchPatterns": ["/backend/**"]
-  },
-  "deploy": {
-    "startCommand": "gunicorn esg_backend.wsgi:application --bind 0.0.0.0:$PORT",
-    "restartPolicyType": "ON_FAILURE"
-  }
+  "$schema": "https://schema.railpack.com",
+  "provider": "python"
 }
