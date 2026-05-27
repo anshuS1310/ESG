@@ -1,4 +1,4 @@
-# Breathe ESG — Carbon Emissions Tracker
+# ESG — Carbon Emissions Tracker
 
 **Live Demo:** [joyful-radiance-production-6eb8.up.railway.app](https://joyful-radiance-production-6eb8.up.railway.app)
 
