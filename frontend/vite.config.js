@@ -1,18 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const backendUrl = process.env.VITE_API_URL || 'http://127.0.0.1:8000'
+const backendUrl = process.env.VITE_API_URL || 'http://127.0.0.1:8080'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
-    proxy: {
-      '/api': {
-        target: backendUrl,
-        changeOrigin: true,
-        secure: false,
-      }
-    }
+    // Whitelists host headers during dev-server execution loops
+    allowedHosts: ['.railway.app', 'joyful-radiance-production-6eb8.up.railway.app']
+  },
+  preview: {
+    // Whitelists host headers during production preview execution loops
+    allowedHosts: ['.railway.app', 'joyful-radiance-production-6eb8.up.railway.app']
   }
 })
