@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from esg_backend.views import (
+    health_check,
     list_emissions_api,
     review_record_api,
     bulk_approve_api,
@@ -11,6 +12,9 @@ from esg_backend.views import (
 )
 
 urlpatterns = [
+    # Root Health Check Endpoint
+    path('', health_check, name='health_check'),
+
     # Ingestion Trigger API
     path('api/emissions/ingest/', ingest_pipeline_trigger, name='ingest_pipeline'),
     

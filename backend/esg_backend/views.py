@@ -9,6 +9,17 @@ from esg_backend.models import CarbonEmissionRecord, AuditTrail, Organization, D
 from esg_backend.parsers import ingest_sap_csv, ingest_utility_csv, ingest_travel_csv
 from esg_backend.services import calculate_emissions, resolve_record_anomaly
 
+def health_check(request):
+    """
+    Simple root health check endpoint returning 200 OK.
+    """
+    return JsonResponse({
+        'status': 'healthy',
+        'timestamp': str(timezone.now()),
+        'service': 'Breathe ESG Backend API'
+    })
+
+
 def get_record_serializer(r):
     """
     Standard serializer helper for Emission Records.
