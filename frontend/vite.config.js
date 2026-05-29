@@ -7,10 +7,24 @@ export default defineConfig({
   plugins: [react()],
   server: {
     // Whitelists host headers during dev-server execution loops
-    allowedHosts: ['.railway.app', 'joyful-radiance-production-6eb8.up.railway.app']
+    allowedHosts: ['.railway.app', 'joyful-radiance-production-6eb8.up.railway.app'],
+    proxy: {
+      '/api': {
+        target: backendUrl,
+        changeOrigin: true,
+        secure: false
+      }
+    }
   },
   preview: {
     // Whitelists host headers during production preview execution loops
-    allowedHosts: ['.railway.app', 'joyful-radiance-production-6eb8.up.railway.app']
+    allowedHosts: ['.railway.app', 'joyful-radiance-production-6eb8.up.railway.app'],
+    proxy: {
+      '/api': {
+        target: backendUrl,
+        changeOrigin: true,
+        secure: false
+      }
+    }
   }
 })
