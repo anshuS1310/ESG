@@ -83,6 +83,10 @@ export default function App() {
   };
 
   useEffect(() => {
+    console.log("=== Breathe ESG Diagnostic ===");
+    console.log("VITE_API_URL Env Var:", import.meta.env.VITE_API_URL);
+    console.log("Resolved API Base URL:", API_BASE || "RELATIVE (Falls back to frontend domain)");
+    console.log("=============================");
     fetchData();
   }, []);
 
