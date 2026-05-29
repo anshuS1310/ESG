@@ -14,7 +14,11 @@ import {
   Terminal
 } from 'lucide-react';
 
-const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+let rawApiUrl = import.meta.env.VITE_API_URL || '';
+if (rawApiUrl && !rawApiUrl.startsWith('http://') && !rawApiUrl.startsWith('https://')) {
+  rawApiUrl = 'https://' + rawApiUrl;
+}
+const API_BASE = rawApiUrl.replace(/\/$/, '');
 
 export default function App() {
   // Navigation states (conditional tab rendering)
