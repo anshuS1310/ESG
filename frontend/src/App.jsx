@@ -14,6 +14,8 @@ import {
   Terminal
 } from 'lucide-react';
 
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+
 export default function App() {
   // Navigation states (conditional tab rendering)
   const [activeTab, setActiveTab] = useState('dashboard'); // dashboard, ingestion, review, benefits
@@ -57,18 +59,23 @@ export default function App() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const statsRes = await fetch('/api/emissions/stats/');
+      const statsRes = await fetch(`${API_BASE}/api/emissions/stats/`);
       if (statsRes.ok) {
         const statsData = await statsRes.json();
         setStats(statsData);
+      } else {
+        console.error('Stats API returned non-OK status:', statsRes.status);
       }
       
-      const recordsRes = await fetch('/api/emissions/');
+      const recordsRes = await fetch(`${API_BASE}/api/emissions/`);
       if (recordsRes.ok) {
         const recordsData = await recordsRes.json();
         setRecords(recordsData.records);
+      } else {
+        console.error('Records API returned non-OK status:', recordsRes.status);
       }
     } catch (err) {
+      console.error('Failed to sync data pipelines from backend:', err);
       showToast('Error syncing data pipelines from backend.', 'error');
     } finally {
       setLoading(false);
@@ -88,7 +95,7 @@ export default function App() {
   const handleBulkApprove = async () => {
     if (selectedIds.length === 0) return;
     try {
-      const response = await fetch('/api/emissions/bulk-approve/', {
+      const response = await fetch(`${API_BASE}/api/emissions/bulk-approve/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ record_ids: selectedIds })
@@ -106,6 +113,7 @@ export default function App() {
         showToast(err.error || 'Bulk approval failed.', 'error');
       }
     } catch (err) {
+      console.error('Bulk approval failed:', err);
       showToast('API communication error during approval.', 'error');
     }
   };
@@ -118,7 +126,7 @@ export default function App() {
       `Connecting to database and validating file streams...`
     ]);
     try {
-      const response = await fetch('/api/emissions/ingest/', { method: 'POST' });
+      const response = await fetch(`${API_BASE}/api/emissions/ingest/`, { method: 'POST' });
       if (response.ok) {
         const data = await response.json();
         setLogs(prev => [
@@ -137,6 +145,7 @@ export default function App() {
         showToast(err.error, 'error');
       }
     } catch (err) {
+      console.error('Ingestion failed:', err);
       setLogs(prev => [...prev, `Could not connect to the backend database service.`]);
       showToast('API communication error during ingestion.', 'error');
     } finally {
@@ -147,7 +156,7 @@ export default function App() {
   // Auto-Fix a single record
   const handleAutoResolve = async (recordId) => {
     try {
-      const response = await fetch(`/api/emissions/${recordId}/auto-resolve/`, { method: 'POST' });
+      const response = await fetch(`${API_BASE}/api/emissions/${recordId}/auto-resolve/`, { method: 'POST' });
       if (response.ok) {
         const data = await response.json();
         showToast('Data gap estimated and resolved.');
@@ -158,6 +167,7 @@ export default function App() {
         showToast(err.error || 'Resolution engine error.', 'error');
       }
     } catch (err) {
+      console.error('Auto-resolve failed:', err);
       showToast('Auto-resolve endpoint call failed.', 'error');
     }
   };
@@ -167,7 +177,7 @@ export default function App() {
     e.preventDefault();
     if (!selectedRecord) return;
     try {
-      const response = await fetch(`/api/emissions/${selectedRecord.id}/edit/`, {
+      const response = await fetch(`${API_BASE}/api/emissions/${selectedRecord.id}/edit/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editForm)
@@ -183,6 +193,7 @@ export default function App() {
         showToast(err.error || 'Update failed.', 'error');
       }
     } catch (err) {
+      console.error('Manual edit failed:', err);
       showToast('API communication error during edit.', 'error');
     }
   };
@@ -190,7 +201,7 @@ export default function App() {
   // Update status (Approve or Flag)
   const handleStatusChange = async (recordId, status) => {
     try {
-      const response = await fetch(`/api/emissions/${recordId}/review/`, {
+      const response = await fetch(`${API_BASE}/api/emissions/${recordId}/review/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status, comment: 'Reviewed by auditor.' })
@@ -205,6 +216,7 @@ export default function App() {
         showToast(err.error || 'Review update failed.', 'error');
       }
     } catch (err) {
+      console.error('Status change failed:', err);
       showToast('API communication error during review.', 'error');
     }
   };
