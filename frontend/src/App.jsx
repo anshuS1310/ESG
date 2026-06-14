@@ -255,13 +255,13 @@ export default function App() {
   };
 
   const toggleSelectAll = () => {
-    if (selectedIds.length === filteredRecords.length) {
+    const selectableRecords = filteredRecords.filter(r => r.status !== 'APPROVED');
+    if (selectableRecords.length === 0) return;
+    
+    if (selectedIds.length === selectableRecords.length) {
       setSelectedIds([]);
     } else {
-      const pendingAndFlagged = filteredRecords
-        .filter(r => r.status !== 'APPROVED')
-        .map(r => r.id);
-      setSelectedIds(pendingAndFlagged);
+      setSelectedIds(selectableRecords.map(r => r.id));
     }
   };
 
@@ -837,7 +837,11 @@ export default function App() {
                       <th style={{ width: '50px', textAlign: 'center' }}>
                         <input 
                           type="checkbox" 
-                          checked={filteredRecords.length > 0 && selectedIds.length === filteredRecords.filter(r => r.status !== 'APPROVED').length}
+                          disabled={filteredRecords.filter(r => r.status !== 'APPROVED').length === 0}
+                          checked={
+                            filteredRecords.filter(r => r.status !== 'APPROVED').length > 0 && 
+                            selectedIds.length === filteredRecords.filter(r => r.status !== 'APPROVED').length
+                          }
                           onChange={toggleSelectAll}
                         />
                       </th>
