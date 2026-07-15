@@ -162,21 +162,9 @@ Once both servers are running, go to the **Ingestion Port** tab in the app and c
 
 ---
 
-## Deployment (Railway)
-
-Both services are deployed on [Railway](https://railway.app):
-
-- **Backend** is deployed from the `/backend` folder with root directory set to `/backend`
-- **Frontend** is deployed from the `/frontend` folder with root directory set to `/frontend`
-- The frontend uses `VITE_API_URL` environment variable to point to the backend URL
-
-The `railpack.json` file in the backend folder tells Railway to run `python manage.py collectstatic --noinput` during the build step so that static files are ready before the server starts.
-
----
-
 ## Known Limitations
 
-- The database is SQLite, which resets on every Railway redeploy (since the file is not persisted). For production use, switching to PostgreSQL is recommended.
+- The database is SQLite, which resets on every Render redeploy (since the file is not persisted). For production use, switching to PostgreSQL is recommended.
 - The sample data files are hardcoded — a future version could support user file uploads directly from the browser.
 - Authentication is not implemented yet — all API endpoints are currently public.
 
